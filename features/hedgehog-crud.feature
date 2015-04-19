@@ -6,7 +6,7 @@ Feature: I would like to edit hedgehog
     And I fill in "Username" with "admin"
     And I fill in "Password" with "loremipsum"
     And I press "Login"
-    And I go to "/admin/tree/"
+    And I go to "/admin/hedgehog/"
     Then I should not see "<hedgehog>"
     And I follow "Create a new entry"
     Then I should see "Hedgehog creation"
@@ -17,10 +17,10 @@ Feature: I would like to edit hedgehog
     And I should see "<lifetime>"
 
   Examples:
-    | hedgehog    | lifetime |
-    | białobrzuchy| 5        |
-    | uszaty      | 9        |
-    | amurski     | 8        |
+    | hedgehog     | lifetime |
+    | białobrzuchy | 5        |
+    | uszaty       | 9        |
+    | amurski      | 8        |
 
 
 
@@ -36,7 +36,7 @@ Feature: I would like to edit hedgehog
     Then I should see "<old-hedgehog>"
     When I follow "Edit"
     And I fill in "Name" with "<new-hedgehog>"
-    And I fill in "Lifetimet" with "<new-lifetime>"
+    And I fill in "Lifetime" with "<new-lifetime>"
     And I press "Update"
     And I follow "Back to the list"
     Then I should see "<new-hedgehog>"
@@ -63,7 +63,7 @@ Feature: I would like to edit hedgehog
     Then I should not see "<hedgehog>"
 
   Examples:
-    |  hedgehog   |   
-    | białobrzuchy|
-    | wschodni    |
+    |  hedgehog    |   
+    | białobrzuchy |
+    | zachodni     |
 
